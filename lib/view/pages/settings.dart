@@ -1,3 +1,4 @@
+import 'package:calculadora_imc/view/widgets/lists/options_settings.dart';
 import 'package:calculadora_imc/view/widgets/ui_components/footer.dart';
 import 'package:calculadora_imc/view/widgets/ui_components/header.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class _SettingsState extends State<Settings>
       appBar: header(title: "Configurações"),
       bottomNavigationBar: footer(size: size, context: context),
       backgroundColor: const Color(0xFFFFFAFA),
+      body: optionsSettings(size: size),
     );  
   }
 }
