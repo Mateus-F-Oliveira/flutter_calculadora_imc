@@ -2,18 +2,15 @@ import 'package:calculadora_imc/view/global/global.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
 
-Widget valueTable(
-{
-  required String text, 
-  required bool selected
-}) => Container(
-  color: selected ? const Color.fromARGB(255, 1, 255, 1) : Colors.transparent,
+Widget infosTitle({required String title, }) => Container(
+  color: Colors.green,
   child: Text(
-    text,
+    title,
     textAlign: TextAlign.center,
     style: TextStyle(
-      fontSize: 15,
       color: global.getSecondary(),
+      fontSize: 18,
+      fontWeight: FontWeight.bold
     ),
   ),
 );

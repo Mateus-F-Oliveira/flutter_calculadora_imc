@@ -1,8 +1,9 @@
-import 'package:calculadora_imc/view/widgets/ui_components/footer.dart';
 import 'package:calculadora_imc/view/widgets/ui_components/input_border.dart';
 import 'package:calculadora_imc/view/widgets/table/show_table_imc.dart';
+import 'package:calculadora_imc/view/widgets/ui_components/footer.dart';
 import 'package:calculadora_imc/view/widgets/ui_components/header.dart';
 import 'package:calculadora_imc/view/widgets/texts/show_result.dart';
+import 'package:calculadora_imc/view/global/global.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
 
@@ -33,7 +34,7 @@ class _HomeState extends State<Home>
     return Scaffold(
       appBar: header(title: "Calculadora de IMC"),
       bottomNavigationBar: footer(size: size, context: context),
-      backgroundColor: const Color(0xFFFFFAFA),
+      backgroundColor: global.getPrimary(),
       body: Stack(
         children: [
           input(
@@ -70,15 +71,15 @@ class _HomeState extends State<Home>
           child: TextField(
             controller: controller,
             enabled: true,
-            style: const TextStyle(
-              color: Color(0xFF08446c),
+            style: TextStyle(
+              color: global.getSecondary(),
               fontSize: 16
             ),
             decoration: InputDecoration(
               labelText: "Peso",
-              labelStyle: const TextStyle(
+              labelStyle: TextStyle(
                 fontSize: 12,
-                color: Color(0xFF08446c),
+                color: global.getSecondary(),
               ),
               border: inputBorder(),
               enabledBorder: inputBorder(),
@@ -95,9 +96,9 @@ class _HomeState extends State<Home>
     child: Padding(
       padding: EdgeInsets.only(top: size*0.415),
       child: Container(
-        decoration: const BoxDecoration(
-          color: Color(0xFF08446c),
-          borderRadius: BorderRadius.all(Radius.circular(4))
+        decoration: BoxDecoration(
+          color: global.getSecondary(),
+          borderRadius: const BorderRadius.all(Radius.circular(4))
         ),
         height: size*0.06,
         width: size*0.18,
@@ -121,11 +122,11 @@ class _HomeState extends State<Home>
             else if(result >= 35 && result < 40) {setState(() => _option = 5);}
             else {setState(() => _option = 6);}
           },
-          child: const Text(
+          child: Text(
             "Calcular",
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Color(0xFFFFFAFA),
+              color: global.getPrimary(),
               fontSize: 18
             ),
           ),

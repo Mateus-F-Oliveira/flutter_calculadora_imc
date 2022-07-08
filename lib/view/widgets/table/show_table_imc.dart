@@ -1,6 +1,6 @@
-import 'package:calculadora_imc/view/widgets/texts/header_table.dart';
-import 'package:calculadora_imc/view/widgets/texts/value_table.dart';
 import 'package:calculadora_imc/view/widgets/ui_components/table_border_decoration.dart';
+import 'package:calculadora_imc/view/widgets/table/show_table_row.dart';
+import 'package:calculadora_imc/view/widgets/texts/header_table.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
 
@@ -20,113 +20,41 @@ Widget showTableIMC({required double size, required int option}) => Align(
             headerTable(text: "Classificação")
           ]
         ),
-        TableRow(
-          children: [
-            option == 1 ? valueTable(
-              text: "Menor do que 18,5",
-              selected: true
-            ) : valueTable(
-              text: "Menor do que 18,5",
-              selected: false
-            ),
-            option == 1 ? valueTable(
-              text: "Abaixo do peso",
-              selected: true
-            ) : valueTable(
-              text: "Abaixo do peso",
-              selected: false
-            )
-          ]
+        showTableRow(
+          id: 1,
+          option: option, 
+          column1Value: "Menor do que 18,5", 
+          column2Value: "Abaixo do peso"
         ),
-        TableRow(
-          children: [
-            option == 2 ? valueTable(
-              text: "Entre 18,5 e 24,9",
-              selected: true
-            ) : valueTable(
-              text: "Entre 18,5 e 24,9",
-              selected: false
-            ) ,
-            option == 2 ? valueTable(
-              text: "Peso normal",
-              selected: true
-            ) : valueTable(
-              text: "Peso normal",
-              selected: false
-            )
-          ]
+        showTableRow(
+          id: 2,
+          option: option, 
+          column1Value: "Entre 18,5 e 24,9", 
+          column2Value: "Peso normal"
         ),
-        TableRow(
-          children: [
-            option == 3 ? valueTable(
-              text: "Entre 25 e 29,9",
-              selected: true
-            ) : valueTable(
-              text: "Entre 25 e 29,9",
-              selected: false
-            ),
-            option == 3 ? valueTable(
-              text: "Acima do peso (sobrepeso)",
-              selected: true
-            ) : valueTable(
-              text: "Acima do peso (sobrepeso)",
-              selected: false
-            )
-          ]
+        showTableRow(
+          id: 3,
+          option: option, 
+          column1Value: "Entre 25 e 29,9", 
+          column2Value: "Acima do peso (sobrepeso)"
         ),
-        TableRow(
-          children: [
-            option == 4 ? valueTable(
-              text: "Entre 30 e 34,9",
-              selected: true
-            ) : valueTable(
-              text: "Entre 30 e 34,9",
-              selected: false
-            ),
-            option == 4 ? valueTable(
-              text: "Obesidade I",
-              selected: true
-            ) : valueTable(
-              text: "Obesidade I",
-              selected: false
-            )
-          ]
+        showTableRow(
+          id: 4,
+          option: option, 
+          column1Value: "Entre 30 e 34,9", 
+          column2Value: "Obesidade I"
         ),
-        TableRow(
-          children: [
-            option == 5 ? valueTable(
-              text: "Entre 35 e 39,9",
-              selected: true
-            ) : valueTable(
-              text: "Entre 35 e 39,9",
-              selected: false
-            ),
-            option == 5 ? valueTable(
-              text: "Obesidade II",
-              selected: true
-            ) : valueTable(
-              text: "Obesidade II",
-              selected: false
-            )
-          ]
+        showTableRow(
+          id: 5,
+          option: option, 
+          column1Value: "Entre 35 e 39,9", 
+          column2Value: "Obesidade II"
         ),
-        TableRow(
-          children: [
-            option == 6 ? valueTable(
-              text: "Maior do que 40",
-              selected: true
-            ) : valueTable(
-              text: "Maior do que 40",
-              selected: false
-            ),
-            option == 6 ? valueTable(
-              text: "Obesidade III",
-              selected: true
-            ) : valueTable(
-              text: "Obesidade III",
-              selected: false
-            )
-          ]
+        showTableRow(
+          id: 6,
+          option: option, 
+          column1Value: "Maior do que 40", 
+          column2Value: "Obesidade III"
         ),
       ],
       border: tableBorderDecoration(),

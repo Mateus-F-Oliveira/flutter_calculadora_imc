@@ -1,15 +1,13 @@
+import 'package:calculadora_imc/view/global/global.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
 
-Widget headerTable({required String text})
-{
-  return Text(
-    text,
-    textAlign: TextAlign.center,
-    style: const TextStyle(
-      fontSize: 18,
-      color: Color(0xFF08446c),
-      fontWeight: FontWeight.bold
-    ),
-  );
-}
+Widget headerTable({required String text}) => Text(
+  text,
+  textAlign: TextAlign.center,
+  style: TextStyle(
+    fontSize: 18,
+    color: global.getSecondary(),
+    fontWeight: FontWeight.bold
+  ),
+);
