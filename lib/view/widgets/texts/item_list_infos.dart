@@ -2,14 +2,15 @@ import 'package:calculadora_imc/view/global/global.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
 
-Widget infosText({required String text}) => Padding(
+Widget itemListInfos({required String text}) => Padding(
   padding: const EdgeInsets.only(top: 5),
   child: Text(
     text,
-    textAlign: TextAlign.justify,
+    textAlign: TextAlign.left,
     style: TextStyle(
       color: global.getSecondary(),
-      fontSize: 14
+      fontSize: 16,
+      fontWeight: FontWeight.bold
     ),
   ),
 );

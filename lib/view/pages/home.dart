@@ -105,22 +105,25 @@ class _HomeState extends State<Home>
         child: TextButton(
           onPressed: ()
           {
-            FocusManager.instance.primaryFocus?.unfocus();
-            double weight = double.parse(weightController.text.toString());
-            double height = double.parse(heightController.text.toString()) / 100;
-            double result = weight / (height * height);
-            setState(()
+            if(weightController.text.isNotEmpty || heightController.text.isNotEmpty)
             {
-              weightController.clear();
-              heightController.clear();
-              _result = result;
-            });
-            if(result < 18.5) {setState(() => _option = 1);}
-            else if(result >= 18.5 && result < 25) {setState(() => _option = 2);}
-            else if(result >= 25 && result < 30) {setState(() => _option = 3);}
-            else if(result >= 30 && result < 35) {setState(() => _option = 4);}
-            else if(result >= 35 && result < 40) {setState(() => _option = 5);}
-            else {setState(() => _option = 6);}
+              FocusManager.instance.primaryFocus?.unfocus();
+              double weight = double.parse(weightController.text.toString());
+              double height = double.parse(heightController.text.toString()) / 100;
+              double result = weight / (height * height);
+              setState(()
+              {
+                weightController.clear();
+                heightController.clear();
+                _result = result;
+              });
+              if(result < 18.5) {setState(() => _option = 1);}
+              else if(result >= 18.5 && result < 25) {setState(() => _option = 2);}
+              else if(result >= 25 && result < 30) {setState(() => _option = 3);}
+              else if(result >= 30 && result < 35) {setState(() => _option = 4);}
+              else if(result >= 35 && result < 40) {setState(() => _option = 5);}
+              else {setState(() => _option = 6);}
+            }
           },
           child: Text(
             "Calcular",
